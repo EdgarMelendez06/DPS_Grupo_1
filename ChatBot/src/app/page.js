@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import './Chatbot.css';
-import {locacion, libros} from './PreguntasBiblio.js';
+import {locacion, libros, calendario} from './PreguntasBiblio.js';
+import { alimentacion, clubes, curriculum, discapacidades, entrevistasTrabajo, finDeSemana, tutoria, pasantias } from './Preguntas2';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]); // Almacena los mensajes
@@ -32,15 +33,19 @@ const Chatbot = () => {
   const getBotResponse = (userInput) => {
     const input = userInput.toLowerCase();
 
-    const Locacion = locacion;
-    const Libros = libros;
 
-    if (Locacion.some(prueba => input.includes(prueba))) {
-      return 'viva la alegria';
-    }
+    const Calendario = calendario;
+    const Discapacidades = discapacidades;
+    const Turoria = tutoria;
+    const Pasantias = pasantias;
+    const Curriculum = curriculum;
+    const EntrevistasTrabajo = entrevistasTrabajo;
+    const Clubes = clubes;
+    const FinDeSemana = finDeSemana;
+    const Alimentacion = alimentacion;
 
     // Preguntas sobre el calendario académico
-    if (input.includes('calendario académico') || input.includes('calendario') || input.includes('fechas importantes') || input.includes('cuál es el calendario académico para este semestre')) {
+    if (Calendario.some(prueba => input.includes(prueba))) {
       return 'El calendario académico para este semestre es del 1 de septiembre al 15 de diciembre.';
     }
     
@@ -83,42 +88,42 @@ const Chatbot = () => {
 
     // Don Mauri, uste trabaja desde aqui
     // Preguntas sobre recursos para estudiantes con discapacidades
-    if (input.includes('discapacidades') || input.includes('recursos disponibles para estudiantes con discapacidades')) {
+    if (Discapacidades.some(prueba => input.includes(prueba))) {
       return 'La universidad ofrece varios recursos para estudiantes con discapacidades, incluyendo servicios de accesibilidad y apoyo académico. Puedes obtener más información en el departamento de servicios estudiantiles.';
     }
 
     // Preguntas sobre asesoramiento o tutoría
-    if (input.includes('asesoramiento') || input.includes('tutoría') || input.includes('mejorar mi rendimiento académico') || input.includes('qué servicios de asesoramiento o tutoría están disponibles para mejorar mi rendimiento académico')) {
+    if (Turoria.some(prueba => input.includes(prueba))) {
       return 'La universidad ofrece servicios de asesoramiento académico y tutoría para ayudar a los estudiantes a mejorar su rendimiento. Puedes contactar al centro de tutoría para más detalles.';
     }
 
     // Preguntas sobre pasantías o prácticas profesionales
-    if (input.includes('pasantías') || input.includes('prácticas profesionales') || input.includes('cómo puedo encontrar pasantías o prácticas profesionales relevantes para mi carrera') || input.includes('pasantias') || input.includes('practicas')) {
+    if (Pasantias.some(prueba => input.includes(prueba))) {
       return 'Puedes encontrar pasantías y prácticas profesionales a través del centro de carreras de la universidad. Ellos te pueden ayudar a encontrar oportunidades relevantes para tu carrera.';
     }
 
     // Preguntas sobre currículum vitae
-    if (input.includes('currículum vitae') || input.includes('recursos para ayudarme a escribir mi currículum vitae')) {
+    if (Curriculum.some(prueba => input.includes(prueba))) {
       return 'El centro de carreras ofrece recursos y talleres para ayudarte a escribir tu currículum vitae. Puedes programar una cita con un asesor de carreras para obtener asistencia personalizada.';
     }
 
     // Preguntas sobre talleres para entrevistas de trabajo
-    if (input.includes('talleres') || input.includes('entrevistas de trabajo') || input.includes('talleres disponibles para prepararme para entrevistas de trabajo')) {
+    if (EntrevistasTrabajo.some(prueba => input.includes(prueba))) {
       return 'Sí, la universidad ofrece talleres para prepararte para entrevistas de trabajo. Puedes consultar el calendario de eventos del centro de carreras para ver las próximas fechas.';
     }
 
     // Preguntas sobre clubes o actividades extracurriculares
-    if (input.includes('clubes') || input.includes('actividades extracurriculares') || input.includes('qué clubes o actividades extracurriculares están disponibles en el campus')) {
+    if (Clubes.some(prueba => input.includes(prueba))) {
       return 'Hay una variedad de clubes y actividades extracurriculares disponibles en el campus. Puedes encontrar una lista completa en el portal estudiantil o en el centro de actividades estudiantiles.';
     }
 
     // Preguntas sobre actividades para el fin de semana
-    if (input.includes('actividad interesante') || input.includes('fin de semana') || input.includes('hay alguna actividad interesante planeada para el fin de semana')) {
+    if (FinDeSemana.some(prueba => input.includes(prueba))) {
       return 'Este fin de semana hay varias actividades interesantes, incluyendo una noche de cine el sábado y un torneo de fútbol el domingo. Consulta el calendario de eventos para más detalles.';
     }
 
     // Preguntas sobre opciones de alimentación en el campus
-    if (input.includes('alimentación') || input.includes('opciones de alimentación') || input.includes('cuáles son las opciones de alimentación disponibles en el campus')) {
+    if (Alimentacion.some(prueba => input.includes(prueba))) {
       return 'El campus ofrece varias opciones de alimentación, incluyendo cafeterías, restaurantes y máquinas expendedoras. Puedes encontrar más información sobre los horarios y ubicaciones en el portal estudiantil.';
     }
 
