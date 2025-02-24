@@ -98,3 +98,30 @@ export const alimentacion = [
     "comida",
     "comer"
 ];
+
+export const viajes = [
+    "¿Cuál es el destino más exótico que has visitado?",
+    "¿Qué lugar te gustaría explorar en el futuro?",
+    "¿Prefieres viajar solo o acompañado?",
+    "¿Cuál es tu anécdota más divertida en un viaje?",
+    "¿Qué cultura te intriga más conocer?"
+  ];
+  
+  export const filosoficas = [
+    "¿Cuál es el sentido de la vida para ti?",
+    "¿Crees en el destino o en el libre albedrío?",
+    "¿Qué piensas sobre la existencia del alma?",
+    "¿Cómo definirías la felicidad?",
+    "¿Crees que la moral es subjetiva?"
+  ];
+
+  export const tusgustos = [
+    "¿Qué tipo de música te gusta?",
+    "¿Qué hobbies tienes?",
+    "¿Qué deporte te gusta practicar o ver?",
+    "¿Qué libro estás leyendo actualmente?",
+    "¿Cuál es tu serie de TV favorita?",
+    "¿Cuál es tu videojuego favorito?",
+    "¿Cuál es tu restaurante favorito?",
+    "¿Qué te hace reír a carcajadas?"
+  ];
