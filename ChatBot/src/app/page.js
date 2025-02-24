@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import './Chatbot.css';
 import {locacion, libros, calendario} from './PreguntasBiblio.js';
-import { alimentacion, clubes, curriculum, discapacidades, entrevistasTrabajo, finDeSemana, tutoria, pasantias } from './Preguntas2';
+import { alimentacion, clubes, curriculum, discapacidades, entrevistasTrabajo, finDeSemana, tutoria, pasantias, viajes, filosoficas, tusgustos } from './Preguntas2';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]); // Almacena los mensajes
@@ -43,6 +43,9 @@ const Chatbot = () => {
     const Clubes = clubes;
     const FinDeSemana = finDeSemana;
     const Alimentacion = alimentacion;
+    const Viajes = viajes;
+    const Filosoficas = filosoficas;
+    const TusGustos = tusgustos;
 
     // Preguntas sobre el calendario académico
     if (Calendario.some(prueba => input.includes(prueba))) {
