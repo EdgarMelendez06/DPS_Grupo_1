@@ -36,7 +36,7 @@ const Chatbot = () => {
 
     const Calendario = calendario;
     const Discapacidades = discapacidades;
-    const Turoria = tutoria;
+    const Tutoria = tutoria;
     const Pasantias = pasantias;
     const Curriculum = curriculum;
     const EntrevistasTrabajo = entrevistasTrabajo;
@@ -93,7 +93,7 @@ const Chatbot = () => {
     }
 
     // Preguntas sobre asesoramiento o tutoría
-    if (Turoria.some(prueba => input.includes(prueba))) {
+    if (Tutoria.some(prueba => input.includes(prueba))) {
       return 'La universidad ofrece servicios de asesoramiento académico y tutoría para ayudar a los estudiantes a mejorar su rendimiento. Puedes contactar al centro de tutoría para más detalles.';
     }
 
@@ -125,6 +125,31 @@ const Chatbot = () => {
     // Preguntas sobre opciones de alimentación en el campus
     if (Alimentacion.some(prueba => input.includes(prueba))) {
       return 'El campus ofrece varias opciones de alimentación, incluyendo cafeterías, restaurantes y máquinas expendedoras. Puedes encontrar más información sobre los horarios y ubicaciones en el portal estudiantil.';
+    }
+    
+    // Preguntas sobre religion
+    if (Religion.some(prueba => input.includes(prueba))) {
+      return 'La Universidad es una institución de educación superior con un carisma salesiano, que se basa en los valores evangélicos. La UDB ofrece programas de grado y postgrado, entre ellos, la Maestría en Teología y el Doctorado en Teología';
+    }
+    
+    // Preguntas sobre opciones Amorosas
+    if (Amor.some(prueba => input.includes(prueba))) {
+      return '¡El amor y la amistad son dos de los pilares más importantes de la vida! Ambos enriquecen nuestras experiencias y nos ayudan a crecer como personas.';
+    }
+    
+    // Preguntas sobre opciones de entretenimiento
+    if (Entretenimiento.some(prueba => input.includes(prueba))) {
+      return 'El campus te ofrece una gama de libros en biblioteca, tambien quiero decirte que no tengo permitido hacer chistes ni chismes';
+    }
+    
+    // Preguntas sobre opciones del chatbot
+    if (Chatbot.some(prueba => input.includes(prueba))) {
+      return 'Soy Chatbot, tu asistente de creado alumnos de la UDB. Mi misión es ayudarte a encontrar respuestas a tus preguntas. Puedo proporcionarte información, ayudarte con temas sobre el campus.';
+    }
+
+     // Preguntas sobre opciones del estudiantes
+    if (Estudiantes.some(prueba => input.includes(prueba))) {
+      return 'No puedo hacer tareas por ti! Estoy aquí para apoyarte y guiarte';
     }
 
     return 'Lo siento, no entendí tu pregunta. ¿Puedes ser más específico?';
