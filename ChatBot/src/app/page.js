@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from 'react';
 import './Chatbot.css';
-import {locacion, libros, calendario} from './PreguntasBiblio.js';
-import { alimentacion, clubes, curriculum, discapacidades, entrevistasTrabajo, finDeSemana, tutoria, pasantias } from './Preguntas2';
+import { alimentacion, clubes, curriculum, discapacidades, entrevistasTrabajo, finDeSemana, tutoria, pasantias, apoyo } from './Preguntas2';
+import { saludos, horario, biblioteca, inscripcion, eventos, preguntasTecnologicas, preguntasCuriosas, preguntasDeCulturaGeneral, preguntasDeEntretenimiento } from './Preguntas2';
+import { preguntasDeHumor, preguntasDeTrabajo, preguntasFilosoficas, preguntasSobreRelaciones, preguntasSobreViajes, religion, amor, entreteni } from './Preguntas2';
+import { chatbot, estudiante, calendario } from './Preguntas2';
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]); // Almacena los mensajes
@@ -27,14 +29,18 @@ const Chatbot = () => {
     setMessages([]); // Limpia todos los mensajes
   };
 
-
-
   // Función para generar respuestas del bot
   const getBotResponse = (userInput) => {
     const input = userInput.toLowerCase();
 
 
     const Calendario = calendario;
+    const Saludos = saludos;
+    const Horario = horario;
+    const Biblioteca = biblioteca;
+    const Inscripcion = inscripcion;
+    const Eventos = eventos;
+    const Apoyo = apoyo;
     const Discapacidades = discapacidades;
     const Turoria = tutoria;
     const Pasantias = pasantias;
@@ -43,46 +49,52 @@ const Chatbot = () => {
     const Clubes = clubes;
     const FinDeSemana = finDeSemana;
     const Alimentacion = alimentacion;
+    const PreguntasTecnologicas = preguntasTecnologicas;
+    const PreguntasFilosoficas = preguntasFilosoficas;
+    const PreguntasSobreRelaciones = preguntasSobreRelaciones;
+    const PreguntasCuriosas = preguntasCuriosas;
+    const PreguntasDeHumor = preguntasDeHumor;
+    const PreguntasSobreViajes = preguntasSobreViajes;
+    const PreguntasDeTrabajo = preguntasDeTrabajo;
+    const PreguntasDeEntretenimiento = preguntasDeEntretenimiento;
+    const PreguntasDeCulturaGeneral = preguntasDeCulturaGeneral;
+    const Religion = religion;
+    const Amor = amor;
+    const Entreteni = entreteni;
+    const Chatbot = chatbot;
+    const Estudiante = estudiante;
 
     // Preguntas sobre el calendario académico
     if (Calendario.some(prueba => input.includes(prueba))) {
       return 'El calendario académico para este semestre es del 1 de septiembre al 15 de diciembre.';
     }
     
-    if (input.includes('hola') || input.includes('buenas') || input.includes('tardes') || input.includes('noches')) {
+    if (Saludos.some(prueba => input.includes(prueba))) {
       return 'hola, como puedo ayudarte?.';
     }
 
-    if (input.includes('toyota') || input.includes('cupra')) {
-      return 'carritos baratos y mamalones.';
-    }
-
-    if (input.includes('steach')) {
-      return 'mohana significa familia';
-    }
-
     // Preguntas sobre el horario de clases
-    if (input.includes('horario de clases') || input.includes('horario') || input.includes('clases') || input.includes('dónde puedo encontrar mi horario de clases')) {
+    if (Horario.some(prueba => input.includes(prueba))) {
       return 'Puedes encontrar tu horario de clases en el portal estudiantil.';
     }
 
     // Preguntas sobre la biblioteca
-    if (input.includes('biblioteca') || input.includes('horario biblioteca') || input.includes('ubicación biblioteca')) {
+    if (Biblioteca.some(prueba => input.includes(prueba))) {
       return 'La biblioteca está ubicada en el edificio central. Su horario es de 8:00 AM a 8:00 PM.';
     }
 
     // Preguntas sobre inscripción
-    if (input.includes('inscripción') || input.includes('inscribirme') || input.includes('cursos') || input.includes('cuándo son los períodos de inscripción para cursos')) {
+    if (Inscripcion.some(prueba => input.includes(prueba))) {
       return 'Los períodos de inscripción para cursos comienzan el 20 de agosto.';
     }
 
     // Preguntas sobre eventos en el campus
-    if (input.includes('eventos') || input.includes('actividades') || input.includes('campus')) {
+    if (Eventos.some(prueba => input.includes(prueba))) {
       return 'Esta semana hay un evento importante: la feria de empleo el viernes a las 10:00 AM en el auditorio principal.';
     }
 
     // Preguntas sobre apoyo estudiantil
-    if (input.includes('apoyo') || input.includes('estrés') || input.includes('problemas emocionales') || input.includes('dónde puedo obtener ayuda si estoy experimentando estrés o problemas emocionales')) {
+    if (Apoyo.some(prueba => input.includes(prueba))) {
       return 'Puedes obtener ayuda en el departamento de bienestar estudiantil, ubicado en el edificio de servicios estudiantiles.';
     }
 
@@ -125,6 +137,62 @@ const Chatbot = () => {
     // Preguntas sobre opciones de alimentación en el campus
     if (Alimentacion.some(prueba => input.includes(prueba))) {
       return 'El campus ofrece varias opciones de alimentación, incluyendo cafeterías, restaurantes y máquinas expendedoras. Puedes encontrar más información sobre los horarios y ubicaciones en el portal estudiantil.';
+    }
+
+    if (PreguntasTecnologicas.some(prueba => input.includes(prueba))) {
+      return 'La tecnología avanza rápidamente, ¿quieres saber más sobre algún tema en particular?';
+    }
+    
+    if (PreguntasFilosoficas.some(prueba => input.includes(prueba))) {
+      return 'Las preguntas filosóficas nos hacen reflexionar sobre la vida y la existencia.';
+    }
+    
+    if (PreguntasSobreRelaciones.some(prueba => input.includes(prueba))) {
+      return 'Las relaciones humanas son fundamentales en nuestra vida. ¿Qué aspecto te interesa?';
+    }
+    
+    if (PreguntasCuriosas.some(prueba => input.includes(prueba))) {
+      return 'Las preguntas curiosas nos llevan a explorar nuevas ideas y conocimientos.';
+    }
+    
+    if (PreguntasDeHumor.some(prueba => input.includes(prueba))) {
+      return 'Aquí tienes un chiste: ¿Por qué el libro de matemáticas estaba triste? ¡Porque tenía demasiados problemas!';
+    }
+    
+    if (PreguntasSobreViajes.some(prueba => input.includes(prueba))) {
+      return 'Viajar nos abre nuevas perspectivas. ¿A dónde te gustaría ir?';
+    }
+    
+    if (PreguntasDeTrabajo.some(prueba => input.includes(prueba))) {
+      return 'El trabajo es parte fundamental de la vida. ¿Cómo puedo ayudarte?';
+    }
+    
+    if (PreguntasDeEntretenimiento.some(prueba => input.includes(prueba))) {
+      return 'El entretenimiento nos permite desconectar y disfrutar. ¿Qué te interesa?';
+    }
+    
+    if (PreguntasDeCulturaGeneral.some(prueba => input.includes(prueba))) {
+      return 'La cultura general nos permite comprender mejor el mundo. ¿Qué quieres saber?';
+    }
+    
+    if (Religion.some(prueba => input.includes(prueba))) {
+      return 'Las preguntas sobre religión pueden ser muy profundas. ¿Tienes alguna en particular?';
+    }
+    
+    if (Amor.some(prueba => input.includes(prueba))) {
+      return 'El amor es un tema complejo y hermoso. ¿Qué te gustaría saber?';
+    }
+    
+    if (Entreteni.some(prueba => input.includes(prueba))) {
+      return 'El entretenimiento nos ayuda a relajarnos. ¿Qué te gustaría hacer?';
+    }
+    
+    if (Chatbot.some(prueba => input.includes(prueba))) {
+      return 'Soy un chatbot diseñado para responder preguntas. ¿Cómo puedo ayudarte?';
+    }
+    
+    if (Estudiante.some(prueba => input.includes(prueba))) {
+      return 'La educación es clave para el crecimiento. ¿En qué necesitas ayuda?';
     }
 
     return 'Lo siento, no entendí tu pregunta. ¿Puedes ser más específico?';
